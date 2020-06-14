@@ -63,12 +63,12 @@ def top_n_ranking(n, ranking_df):
     ax = plt.subplot()
     plt.plot(x, y, marker='o', label=coaster)
     
-    ax.invert_yaxis()
-    ax.set_yticks(range(1, n+1))
-    plt.legend()
-    plt.title('Top ' + str(n) + ' Coasters')
-    plt.xlabel('Year')
-    plt.ylabel('Ranking')
+  ax.invert_yaxis()
+  ax.set_yticks(range(1, n+1))
+  plt.legend()
+  plt.title('Top ' + str(n) + ' Coasters')
+  plt.xlabel('Year')
+  plt.ylabel('Ranking')
   return plt.show()
 
 top_n_ranking(4, wood_df)
