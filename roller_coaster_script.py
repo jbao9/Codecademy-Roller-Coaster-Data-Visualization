@@ -22,7 +22,7 @@ def plot_ranking(coaster_name, park_name, ranking_df):
   plt.ylabel('Ranking')
   return plt.show()
 
-plot_ranking('Boulder Dash', 'Lake Compounce', wood_df)
+plot_ranking('El Toro', 'Six Flags Great Adventure', wood_df)
 
 plt.clf()
 
