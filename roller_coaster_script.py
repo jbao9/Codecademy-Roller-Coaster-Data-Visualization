@@ -106,7 +106,6 @@ def plot_inversions(coaster_df, park_name):
 
   ax = plt.subplot()
   plt.bar(range(len(num_inversions)), num_inversions)
-  plt.axis(xmin=1, xmax=(max(range(len(num_inversions)))+1))
   ax.set_xticks(range(len(coaster_names)))
   ax.set_xticklabels(coaster_names, rotation=90)
 
@@ -115,7 +114,7 @@ def plot_inversions(coaster_df, park_name):
   plt.ylabel('Number of Inversions')
   return plt.show()
 
-plot_inversions(roller_coasters, 'amusement')
+plot_inversions(roller_coasters, 'disneyland')
 
 plt.clf()
     
