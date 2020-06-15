@@ -20,7 +20,7 @@ def plot_ranking(coaster_name, park_name, ranking_df):
   plt.title('{} Rankings'.format(coaster_name))
   plt.xlabel('Year')
   plt.ylabel('Ranking')
-  return plt.show()
+  plt.show()
 
 plot_ranking('El Toro', 'Six Flags Great Adventure', wood_df)
 
@@ -46,7 +46,7 @@ def check_two_ranking(name1, name2, park_name1, park_name2, ranking_df):
   plt.xlabel('Year')
   plt.ylabel('Ranking')
   plt.legend()
-  return plt.show()
+  plt.show()
 
 check_two_ranking('Phoenix', 'Boulder Dash', 'Knoebels Amusement Resort', 'Lake Compounce', wood_df)
 
@@ -69,7 +69,7 @@ def top_n_ranking(n, ranking_df):
   plt.title('Top ' + str(n) + ' Coasters')
   plt.xlabel('Year')
   plt.ylabel('Ranking')
-  return plt.show()
+  plt.show()
 
 top_n_ranking(4, wood_df)
 
@@ -92,7 +92,7 @@ def value_hist(numeric_column, coaster_df):
   plt.xlabel(numeric_column.title())
   plt.ylabel('Count')
   plt.title(numeric_column.title() + ' Histogram')
-  return plt.show()
+  plt.show()
 
 value_hist('length', roller_coasters)
 
@@ -110,10 +110,11 @@ def plot_inversions(coaster_df, park_name):
   ax.set_xticklabels(coaster_names, rotation=90)
   ax.set_yticks(range(0, int(max(num_inversions)+1)))
 
+  plt.subplots_adjust(bottom = 0.5)
   plt.title('Number of Inversions per Coaster at {} Park'.format(park_name.title()))
   plt.xlabel('Roller Coaster')
   plt.ylabel('Number of Inversions')
-  return plt.show()
+  plt.show()
 
 plot_inversions(roller_coasters, 'disneyland')
 
@@ -150,8 +151,13 @@ def scatter_plot(coaster_df, column_name1, column_name2):
   plt.title('Scatter Plot of {} VS. {}'.format(column_name1.title(), column_name2.title()))
   plt.xlabel(column_name1.title())
   plt.ylabel(column_name2.title())
-  return plt.show()
+  plt.show()
 
 scatter_plot(roller_coasters, 'speed', 'height')
+plt.clf()
 
+scatter_plot(roller_coasters, 'speed', 'length')
+plt.clf()
+
+scatter_plot(roller_coasters, 'speed', 'num_inversions')
 plt.clf()
